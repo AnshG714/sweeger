@@ -5,3 +5,7 @@ Sweeger is an open-sourced solution that allows you to become a better software 
 # Setup
 
 Since the project hasn't reached MVP stage yet, refer to individual directories for reference.
+
+# Flowchart
+
+![flowchart](https://github.com/AnshG714/sweeger/blob/master/rsc/flowchart.png?raw=true)
