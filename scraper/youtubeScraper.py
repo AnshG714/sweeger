@@ -20,16 +20,17 @@ with open("../env/.env") as f:
 
 '''
 Return a list of videos for the search term
-(maximum # of videos returned = max_results)
+order: Most likely either 'date' or 'relevance' (see YouTube Data API for more options)
+max_results: Maximum number of videos to return
 '''
-def findVideos(search, max_results=5):
+def findVideos(search, order="date", max_results=5):
     videos = list()
 
     # Make search query via YouTube Data API
     params = dict()
     params['part'] = 'snippet'
     params['maxResults'] = max_results
-    params['order'] = 'date'
+    params['order'] = order
     params['q'] = search
     params['type'] = 'video' # only search for videos (i.e no channels/playlists)
     params['key'] = API_KEY
