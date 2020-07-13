@@ -45,7 +45,8 @@ def findVideos(search, max_results=5):
         link = ''.join([VIDEO_URL,item['id']['videoId']])
         author = item['snippet']['channelTitle']
         datePublished = item['snippet']['publishTime']
+        thumbnailLink = item['snippet']['thumbnails']['high']['url']
 
-        videos.append(Video(title,blurb,link,author,datePublished))
+        videos.append(Video(title,blurb,link,author,datePublished, thumbnailLink))
 
     return videos
