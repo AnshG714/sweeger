@@ -2,9 +2,6 @@ from common import *
 import json
 import sys
 
-a = Article('hey', 'ewiw', 'nweovn', 'ronvr', 'eronr')
-b = Video('hey', 'ewiw', 'nweovn', 'ronvr', 'eronr', 'ejwenvonow')
-
 
 def convertToJSON(obj):
 
@@ -23,6 +20,17 @@ def convertToJSON(obj):
         dic['thumbnailLink'] = obj.thumbnailLink
 
     return json.dumps(dic)
+
+
+def compose(obj):
+    if type(obj) == list:
+        res = []
+        for item in obj:
+            res.append(convertToJSON(item))
+
+        return res
+
+    return convertToJSON(obj)
 
 
 def transferToConsole(data):
