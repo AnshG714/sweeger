@@ -1,5 +1,9 @@
 from common import *
 import json
+import sys
+
+a = Article('hey', 'ewiw', 'nweovn', 'ronvr', 'eronr')
+b = Video('hey', 'ewiw', 'nweovn', 'ronvr', 'eronr', 'ejwenvonow')
 
 
 def convertToJSON(obj):
@@ -19,3 +23,8 @@ def convertToJSON(obj):
         dic['thumbnailLink'] = obj.thumbnailLink
 
     return json.dumps(dic)
+
+
+def transferToConsole(data):
+    print(data)
+    sys.stdout.flush()

@@ -44,7 +44,7 @@ def fetchWebPageSourceAfterScroll(url, numScrolls=9):
     return driver.page_source
 
 
-def findArticles(page_source, keyword=None):
+def findArticles(page_source, keywords=None):
 
     # Initialize BeautifulSoup object
     soup = BeautifulSoup(page_source, 'lxml')
@@ -76,15 +76,18 @@ def findArticles(page_source, keyword=None):
         title = str(container.find(
             class_="ap q eb cc ec cd gd hp hq as av ge eh ei au").a.string)
 
-        articles.append(Article(title, blurb, link, author, date))
+        if keywords:
+            for keyword in keywords:
+                if keyword in blurb or keyword in title:
+                    articles.append(Article(title, blurb, link, author, date))
+                    break
 
     return articles
 
 
-def scrape(url):
+def scrape(url, keywords):
     ps = fetchWebPageSourceAfterScroll(url)
-    articles = findArticles(ps)
-    print(len(articles))
+    articles = findArticles(ps, keywords=keywords)
 
 
 if __name__ == "__main__":
