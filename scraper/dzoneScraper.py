@@ -92,7 +92,3 @@ def scrape(topic, numPages=3):
 
     # flatten list
     return [item for items in res for item in items]
-
-
-ps = loadPage("web-development-programming-tutorials-tools-news", 1)
-print(scrapeSource(ps))
