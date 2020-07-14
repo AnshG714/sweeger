@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
-from common import ContentItem
+from common import Article
 
 BASE_URL = "https://medium.com/topic/"
 
@@ -16,15 +16,6 @@ TOPICS = ["technology", "software-engineering",
 # set to topic/programming for now, but we can extend it to 0ther topics in medium
 # easily, since the DOM is more or less the same.
 MEDIUM_URL = BASE_URL + "programming"
-
-
-class Article(ContentItem):
-    """
-    A general class to represent an article, paves way for better abstraction
-    """
-
-    def __init__(self, title: str, blurb: str, link: str, author: str, datePublished: str):
-        super().__init__(title, blurb, link, author, datePublished)
 
 
 def fetchWebPageSourceAfterScroll(url, numScrolls=9):
