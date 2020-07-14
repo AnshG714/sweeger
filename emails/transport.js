@@ -1,5 +1,6 @@
 "use strict";
 const nodemailer = require("nodemailer");
+const nodecron = require("node-cron")
 
 // async..await is not allowed in global scope, must use a wrapper
 async function main() {
@@ -18,20 +19,26 @@ async function main() {
     },
   });
 
+  nodecron.schedule("* * * * *", function(){
+
+    let transportOptions = {
+      from: '"MLH Fellowship" <foo@example.com>', // sender address
+      to: "bar@example.com, baz@example.com", // list of receivers
+      subject: "MLH - Your weekly suggestons for skillbuilding!", // Subject line
+      text: "Your weekly email.", // plain text body
+      html: "<b>Your suggestions here!</b>", // HTML we have from our formatted emails
+    };
   // send mail with defined transport object
-  let info = await transporter.sendMail({
-    from: '"MLH Fellowship" <foo@example.com>', // sender address
-    to: "bar@example.com, baz@example.com", // list of receivers
-    subject: "MLH - Your weekly suggestons for skillbuilding!", // Subject line
-    text: "Your weekly email.", // plain text body
-    html: "<b>Your suggestions here!</b>", // HTML we have from our formatted emails
+    let info = transporter.sendMail(transportOptions, function(error,information) {
+      if (error) {
+        throw error;
+      } else {
+        console.log("Everything here!");
+      }    
+    });
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
   });
-
-  console.log("Message sent: %s", info.messageId);
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-  // Preview only available when sending through an Ethereal account
-  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  
 }
 
 main().catch(console.error);
