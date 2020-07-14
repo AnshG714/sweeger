@@ -17,3 +17,18 @@ class ContentItem:
 
     def __repr__(self):
         return self.__str__()
+
+
+class Article(ContentItem):
+    """
+    A general class to represent an article, paves way for better abstraction
+    """
+
+    def __init__(self, title: str, blurb: str, link: str, author: str, datePublished: str):
+        super().__init__(title, blurb, link, author, datePublished)
+
+
+class Video(ContentItem):
+    def __init__(self, title: str, blurb: str, link: str, author: str, datePublished: str, thumbnailLink: str):
+        super().__init__(title, blurb, link, author, datePublished)
+        self.thumbnailLink = thumbnailLink
