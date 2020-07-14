@@ -3,7 +3,10 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
 
-BASE_URL = "https://medium.com/topic/"
+BASE_MEDIUM_URL = "https://medium.com/topic/"
+BASE_DEV_TO_URL = "https://dev.to/search?q="
+WEBSITE_MEDIUM = "https://medium.com"
+WEBSITE_DEV = "https://dev.to"
 
 # All the techy topics covered on Medium
 TOPICS = ["technology", "software-engineering",
@@ -14,7 +17,8 @@ TOPICS = ["technology", "software-engineering",
 
 # set to topic/programming for now, but we can extend it to 0ther topics in medium
 # easily, since the DOM is more or less the same.
-MEDIUM_URL = BASE_URL + "programming"
+MEDIUM_URL = BASE_MEDIUM_URL + "programming"
+DEV_TO_URL = BASE_DEV_TO_URL + "code"
 
 
 class Article:
@@ -26,7 +30,7 @@ class Article:
         qmark_index = link.find('?')
         self.title = title
         self.blurb = blurb
-        self.link = 'https://medium.com/' + link[:qmark_index]
+        self.link = WEBSITE_DEV + link[:qmark_index]
         self.author = author
         self.datePublished = datePublished
 
@@ -47,15 +51,19 @@ def fetchWebPageSourceAfterScroll(url, numScrolls=9):
     options.add_argument('--headless')
 
     # Instantiate Chromium driver
-    driver = webdriver.Chrome(
-        "./chromedriver", chrome_options=options)
+    driver = webdriver.Chrome("./chromedriver",chrome_options=options)
 
     # Load the URL
     driver.get(url)
+    time.sleep(1)
     count = 0
     while count <= numScrolls:
         # Get the last such instance of this URL
-        allSections = driver.find_elements_by_tag_name('section')
+  
+        if url == MEDIUM_URL:
+            allSections = driver.find_elements_by_tag_name('section')
+        else:
+            allSections = driver.find_elements_by_tag_name('article')
         lastElement = allSections[-1]
         driver.execute_script("arguments[0].scrollIntoView();", lastElement)
         time.sleep(0.5)
@@ -100,12 +108,59 @@ def findArticles(page_source, keyword=None):
 
     return articles
 
+def findArticlesDev(page_source, keyword=None):
+
+    # Initialize BeautifulSoup object
+    soup = BeautifulSoup(page_source, 'lxml')
+
+    # Get all section tags with the given class
+    articleContainers: bs4.element.ResultSet = soup.findAll(
+        class_="crayons-story")
+
+    articles = []
+
+    #print("Our article containers:")
+    #for i in articleContainers:
+        #print(i)
+        #print("\n")
+    num = 0
+
+    for container in articleContainers:
+        if container.find(class_="crayons-story__flare-tag"): 
+            continue
+        # Get title link
+        link = str(container.find(
+            class_="crayons-story__title").find('a')['href'])
+        #print("Our link is ")
+        #print(link)
+  
+        # Get blurb of article
+        blurb = ""
+
+        # Find the name of the Author
+        author = container.find(
+            class_="crayons-story__secondary fw-medium").string
+  
+    
+        # Get date of publishing
+        date = container.find(class_="crayons-story__tertiary fs-xs").find('time').string
+
+        # Get title of article
+        title = str(container.find(
+            class_="crayons-story__title").a.string)
+
+        articles.append(Article(title, blurb, link, author, date))
+        num=num+1
+    
+    return articles
 
 def scrape(url):
     ps = fetchWebPageSourceAfterScroll(url)
-    articles = findArticles(ps)
-    print(len(articles))
+    articles = findArticlesDev(ps)
+    for i in articles:
+        print(i)
+        print("\n")
 
 
 if __name__ == "__main__":
-    scrape(MEDIUM_URL)
+    scrape(DEV_TO_URL)
