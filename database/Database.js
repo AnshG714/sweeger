@@ -41,3 +41,10 @@ function add_new_user(email, prefs=default_prefs) {
 	// Create entry in prefs
 	database.ref('/prefs/' + hash).set(prefs)
 }
+
+function update_prefs(email, new_prefs) {
+	var hash = email.hashCode();
+	
+	// Update prefs
+	database.ref('/prefs/' + hash).update(new_prefs);
+}
