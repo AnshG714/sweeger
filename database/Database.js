@@ -14,7 +14,7 @@ String.prototype.hashCode = function(){
 
 var default_prefs = {
 	"content": "none",
-	"notifications": "weekly"
+	"notifs": "weekly"
 };
 
 const app = firebase.initializeApp({
@@ -48,3 +48,33 @@ function update_prefs(email, new_prefs) {
 	// Update prefs
 	database.ref('/prefs/' + hash).update(new_prefs);
 }
+
+// Returns a Promise
+// The return value of the promise is a dictionary with the prefs
+function get_prefs(email) {
+	var hash = email.hashCode();
+	
+	return database.ref('/prefs/' + hash).once('value').then(function(snapshot) {
+		return {
+			"content": (snapshot.val() && snapshot.val().content) || 'none',
+			"notifs": (snapshot.val() && snapshot.val().notifs) || 'none'
+		}
+	});
+}
+
+/*
+new_prefs = {
+	"content": "C++",
+	"notifs": "monthly"
+}
+
+add_new_user("random@random.com")
+get_prefs("random@random.com").then(function(prefs) {
+	console.log("Your content: " + prefs['content']);
+	console.log("Your notifs: " + prefs['notifs']);
+});
+update_prefs("random@random.com", new_prefs)
+get_prefs("random@random.com").then(function(prefs) {
+	console.log("Your content: " + prefs['content']);
+	console.log("Your notifs: " + prefs['notifs']);
+});*/
