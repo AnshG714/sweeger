@@ -41,6 +41,7 @@ MEDIUM_TOPICS = [
 
 def scrapeFromSources(keywords: [str]):
     res = Manager().list()
+    print('---- Starting Scrape ----')
 
     def medium():
         for category in MEDIUM_TOPICS:
@@ -49,19 +50,25 @@ def scrapeFromSources(keywords: [str]):
             # print(m_results)
             res.append(m_results)
 
-    def dzone():
-        for category in DZONE_TOPICS:
-            print(f'---- Scraping {category} from DZone ---- \n')
-            d_results = dzoneScrape(category, keywords=keywords)
-            # print(d_results)
-            res.append(d_results)
-
     def youtube():
         for keyword in keywords:
             print(f'---- Scraping Keyword {keyword} from Youtube ---- \n')
             res.append(findVideos(keyword))
 
-    runInParallel(medium, dzone, youtube)
+    # Dzone not working cleanly with parallel processes.
+    # dzonelist = []
+    # # for category in DZONE_TOPICS:
+    # #     print(f'---- Scraping {category} from DZone ---- \n')
+    # #     d_results = dzoneScrape(category, keywords=keywords)
+    # #     # print(d_results)
+    # #     try:
+    # #         dzonelist.append(d_results)
+    # #     except:
+    # #         continue
+
+    # medium()
+    # youtube()
+    runInParallel(medium, youtube)
     return [item for items in res for item in items]
 
 

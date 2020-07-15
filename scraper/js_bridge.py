@@ -37,10 +37,11 @@ def compose(obj):
 if __name__ == "__main__":
 
     # Get list of arguments from command line
+    print("Python script called.")
     n = len(sys.argv[1])
     a = sys.argv[1][1:n-1]
     a = a.split(',')
-
+    print("About to start scraping...")
     scraperResults = scrapeFromSources(a)
     composed = compose(scraperResults)
     print(composed)

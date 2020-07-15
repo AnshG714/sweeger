@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
 from common import Article
+import os
 
 BASE_URL = "https://medium.com/topic/"
 
@@ -21,7 +22,9 @@ def fetchWebPageSourceAfterScroll(url, numScrolls=9):
 
     # Instantiate Chromium driver
     driver = webdriver.Chrome(
-        "./chromedriver", chrome_options=options)
+        os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                     '..', 'scraper', 'chromedriver'),
+        chrome_options=options)
 
     # Load the URL
     driver.get(url)
@@ -49,6 +52,7 @@ def findArticles(page_source, keywords):
     articles = []
 
     for container in articleContainers:
+        # print(container)
         # Get title link
         link = str(container.find('a')['href'])
 
@@ -66,8 +70,13 @@ def findArticles(page_source, keywords):
             text=True, recursive=False))
 
         # Get title of article
-        title = str(container.find(
-            class_="ap q eb cc ec cd gd hp hq as av ge eh ei au").a.string)
+
+        titleContainer = container.find(
+            class_="ap q eb cc ec cd gd hp hq as av ge eh ei au") or container.find(class_="ap q fs bv ft bw hd io ip as av he ch fy au")
+        try:
+            title = str(titleContainer.a.string)
+        except:
+            print("error occured in", str(soup.find('title').string))
 
         if keywords:
             for keyword in keywords:

@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
+import os
 
 
 def getDzoneURL(topic, pageNumber):
@@ -25,7 +26,9 @@ def loadPage(topic, pageNumber):
 
     # Instantiate Chromium driver
     driver = webdriver.Chrome(
-        "./chromedriver", chrome_options=options)
+        os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                     '..', 'scraper', 'chromedriver'),
+        chrome_options=options)
 
     driver.get(getDzoneURL(topic, pageNumber))
     time.sleep(1)
