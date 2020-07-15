@@ -62,9 +62,29 @@ function get_prefs(email) {
 	});
 }
 
-/*
+// Returns a Promise
+// The return value of the promise is a list with the content prefs
+function get_content_prefs(email) {
+	var prefs = get_prefs(email);
+	return prefs.then(function(prefs) {
+		var content = prefs['content'].split(';');
+		return content;
+	});
+}
+
+// Returns a Promise
+// The return value of the promise is a string containing the user's notification prefs
+function get_notif_prefs(email) {
+	var prefs = get_prefs(email);
+	return prefs.then(function(prefs) {
+		var notifs = prefs['notifs'];
+		return notifs;
+	});
+}
+
+
 new_prefs = {
-	"content": "C++",
+	"content": "C++;Java;React JS",
 	"notifs": "monthly"
 }
 
@@ -77,4 +97,10 @@ update_prefs("random@random.com", new_prefs)
 get_prefs("random@random.com").then(function(prefs) {
 	console.log("Your content: " + prefs['content']);
 	console.log("Your notifs: " + prefs['notifs']);
-});*/
+});
+get_content_prefs("random@random.com").then(function(content) {
+	console.log("Content: " + content);
+});
+get_notif_prefs("random@random.com").then(function(notifs) {
+	console.log("Notifs: " + notifs);
+});
