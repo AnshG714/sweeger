@@ -106,7 +106,7 @@ function get_notif_prefs(email) {
 }
 
 
-new_prefs = {
+/*new_prefs = {
 	"content": "C++;Java;React JS",
 	"notifs": "monthly"
 }
@@ -129,5 +129,5 @@ get_notif_prefs("random@random.com").then(function(notifs) {
 });
 add_new_user("test@test.com");
 update_content_prefs("test@test.com", ["Ruby on Rails"]);
-update_notifs_prefs("test@test.com", "daily");
+update_notifs_prefs("test@test.com", "daily");*/
 //remove_user("random@random.com");
