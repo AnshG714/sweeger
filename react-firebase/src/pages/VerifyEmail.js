@@ -20,11 +20,3 @@ export default function VerifyEmail() {
     }
     return <Button variant="warning" size="sm" block onClick={() => setShow(true)}> Show Alert </Button>;
 }
-
-// render(<AlertDismissibleExample />);
-//     return (
-//         <Container>
-//             email not verified
-//         </Container>
-//     )
-// }
