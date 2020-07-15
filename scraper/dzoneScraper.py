@@ -4,21 +4,6 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
 
-DZONE_TOPICS = ["agile-methodology-training-tools-news",
-                "artificial-intelligence-tutorials-tools-news",
-                "big-data-analytics-tutorials-tools-news",
-                "cloud-computing-tutorials-tools-news",
-                "database-sql-nosql-tutorials-tools-news",
-                "devops-tutorials-tools-news",
-                "enterprise-integration-training-tools-news",
-                "iot-developer-tutorials-tools-news-reviews",
-                "java-jdk-development-tutorials-tools-news",
-                "microservices-news-tutorials-tools",
-                "open-source-news-tutorials-tools",
-                "apm-tools-performance-monitoring-optimization",
-                "application-web-network-security",
-                "web-development-programming-tutorials-tools-news"]
-
 
 def getDzoneURL(topic, pageNumber):
 
@@ -56,8 +41,6 @@ def scrapeSource(page_source):
     articleContainers = soup.findAll(
         class_="article-content-right article-toggle")
 
-    print(articleContainers)
-
     articles = []
 
     for container in articleContainers:
@@ -88,7 +71,9 @@ def scrape(topic, numPages=3):
         ps = loadPage(topic, i)
         res.append(scrapeSource(ps))
         time.sleep(1)
-        print(res)
 
     # flatten list
     return [item for items in res for item in items]
+
+
+print(scrape("agile-methodology-training-tools-news"))

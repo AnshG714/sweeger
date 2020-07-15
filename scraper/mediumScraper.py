@@ -6,16 +6,9 @@ from common import Article
 
 BASE_URL = "https://medium.com/topic/"
 
-# All the techy topics covered on Medium
-TOPICS = ["technology", "software-engineering",
-          "self-driving-cars", "programming", "math",
-          "machine-learning", "javascript", "ios-development", "data-science",
-          "cybersecurity", "cryptocurrency", "blockchain", "artificial-intelligence",
-          "android-development"]
 
-# set to topic/programming for now, but we can extend it to 0ther topics in medium
-# easily, since the DOM is more or less the same.
-MEDIUM_URL = BASE_URL + "programming"
+def getMediumURL(topic):
+    return BASE_URL + topic
 
 
 def fetchWebPageSourceAfterScroll(url, numScrolls=9):
@@ -44,7 +37,7 @@ def fetchWebPageSourceAfterScroll(url, numScrolls=9):
     return driver.page_source
 
 
-def findArticles(page_source, keywords=None):
+def findArticles(page_source, keywords):
 
     # Initialize BeautifulSoup object
     soup = BeautifulSoup(page_source, 'lxml')
@@ -81,14 +74,17 @@ def findArticles(page_source, keywords=None):
                 if keyword in blurb or keyword in title:
                     articles.append(Article(title, blurb, link, author, date))
                     break
+        else:
+            articles.append(Article(title, blurb, link, author, date))
 
     return articles
 
 
-def scrape(url, keywords):
-    ps = fetchWebPageSourceAfterScroll(url)
-    articles = findArticles(ps, keywords=keywords)
+def scrape(topic, keywords=None):
+    ps = fetchWebPageSourceAfterScroll(getMediumURL(topic))
+    articles = findArticles(ps, keywords)
+    print(articles)
 
 
 if __name__ == "__main__":
-    scrape(MEDIUM_URL)
+    scrape("programming")
