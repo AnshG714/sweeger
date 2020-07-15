@@ -2,6 +2,7 @@ from common import *
 from dzoneScraper import scrape as dzoneScrape
 from mediumScraper import scrape as mediumScrape
 from youtubeScraper import findVideos
+from multiprocessing import Process
 
 # All topics in DZone
 
@@ -24,10 +25,11 @@ DZONE_TOPICS = [
 # All the techy topics covered on Medium
 MEDIUM_TOPICS = [
     "software-engineering",
-    #  "self-driving-cars",
-    "programming", "math",
+    "programming",
+    "math",
     #  "machine-learning",
-    "javascript", "ios-development",
+    "javascript",
+    "ios-development",
     #  "data-science",
     #  "cybersecurity",
     #  "cryptocurrency",
@@ -39,19 +41,39 @@ MEDIUM_TOPICS = [
 
 def scrapeFromSources(keywords: [str]):
     res = []
-    for category in MEDIUM_TOPICS:
-        print(f'---- Scraping {category} from Medium ---- \n')
-        res.append(mediumScrape(category, keywords=keywords))
 
-    for category in DZONE_TOPICS:
-        print(f'---- Scraping {category} from DZone ---- \n')
-        res.append(dzoneScrape(category, keywords=keywords))
+    def medium():
+        for category in MEDIUM_TOPICS:
+            print(f'---- Scraping {category} from Medium ---- \n')
+            m_results = mediumScrape(category, keywords=keywords)
+            print(m_results)
+            res.append(m_results)
 
-    for keyword in keywords:
-        print(f'---- Scraping Keyword {keyword} from Youtube ---- \n')
-        res.append(findVideos(keyword))
+    def dzone():
+        for category in DZONE_TOPICS:
+            print(f'---- Scraping {category} from DZone ---- \n')
+            d_results = dzoneScrape(category, keywords=keywords)
+            print(d_results)
+            res.append(d_results)
 
+    def youtube():
+        for keyword in keywords:
+            print(f'---- Scraping Keyword {keyword} from Youtube ---- \n')
+            res.append(findVideos(keyword))
+
+    runInParallel(medium, dzone, youtube)
+    print(res)
     return [item for items in res for item in items]
+
+
+def runInParallel(*fns):
+    proc = []
+    for fn in fns:
+        p = Process(target=fn)
+        p.start()
+        proc.append(p)
+    for p in proc:
+        p.join()
 
 
 print(scrapeFromSources(["Angular"]))
