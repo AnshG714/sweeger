@@ -23,7 +23,9 @@ const Login = ({ history }) => {
 
     const { currentUser } = useContext(AuthContext);
 
-    if (currentUser) {
+    if (currentUser && !currentUser.emailVerified) {
+        return <Redirect to="/verify-email" />;
+    } else if (currentUser && currentUser.emailVerified) {
         return <Redirect to="/" />;
     }
 

@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { withRouter } from "react-router";
-import app from "./config/base";
 import { Form, Button, Container } from "react-bootstrap";
+import app from "./config/base";
 
 const SignUp = ({ history }) => {
     const handleSignUp = useCallback(async event => {
@@ -11,6 +11,8 @@ const SignUp = ({ history }) => {
             await app
                 .auth()
                 .createUserWithEmailAndPassword(email.value, password.value);
+            const currentUser = app.auth().currentUser;
+            await currentUser.sendEmailVerification();
             history.push("/");
         } catch (error) {
             alert(error);
@@ -37,20 +39,6 @@ const SignUp = ({ history }) => {
                 </Button>
             </Form>
         </Container>
-        // <div>
-        //   <h1>Sign up</h1>
-        //   <form onSubmit={handleSignUp}>
-        //     <label>
-        //       Email
-        //       <input name="email" type="email" placeholder="Email" />
-        //     </label>
-        //     <label>
-        //       Password
-        //       <input name="password" type="password" placeholder="Password" />
-        //     </label>
-        //     <button type="submit">Sign Up</button>
-        //   </form>
-        // </div>
     );
 };
 
