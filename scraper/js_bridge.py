@@ -35,7 +35,6 @@ def compose(obj):
 
 
 if __name__ == "__main__":
-
     # Get list of arguments from command line
     print("Python script called.")
     n = len(sys.argv[1])

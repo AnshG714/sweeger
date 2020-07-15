@@ -5,11 +5,18 @@ import time
 from common import Article
 import os
 
-BASE_URL = "https://medium.com/topic/"
+BASE_MEDIUM_URL = "https://medium.com/topic/"
+BASE_DEV_TO_URL = "https://dev.to/search?q="
+WEBSITE_MEDIUM = "https://medium.com"
+WEBSITE_DEV = "https://dev.to"
 
 
 def getMediumURL(topic):
-    return BASE_URL + topic
+    return BASE_MEDIUM_URL + topic
+
+
+def getDevURL(topic):
+    return BASE_DEV_TO_URL + topic
 
 
 def fetchWebPageSourceAfterScroll(url, numScrolls=9):
@@ -28,10 +35,15 @@ def fetchWebPageSourceAfterScroll(url, numScrolls=9):
 
     # Load the URL
     driver.get(url)
+    time.sleep(1)
     count = 0
     while count <= numScrolls:
         # Get the last such instance of this URL
-        allSections = driver.find_elements_by_tag_name('section')
+
+        if BASE_MEDIUM_URL in url:
+            allSections = driver.find_elements_by_tag_name('section')
+        else:
+            allSections = driver.find_elements_by_tag_name('article')
         lastElement = allSections[-1]
         driver.execute_script("arguments[0].scrollIntoView();", lastElement)
         time.sleep(0.5)
@@ -85,6 +97,53 @@ def findArticles(page_source, keywords):
                     break
         else:
             articles.append(Article(title, blurb, link, author, date))
+
+    return articles
+
+
+def findArticlesDev(page_source, keyword=None):
+
+    # Initialize BeautifulSoup object
+    soup = BeautifulSoup(page_source, 'lxml')
+
+    # Get all section tags with the given class
+    articleContainers: bs4.element.ResultSet = soup.findAll(
+        class_="crayons-story")
+
+    articles = []
+
+    #print("Our article containers:")
+    # for i in articleContainers:
+    # print(i)
+    # print("\n")
+    num = 0
+
+    for container in articleContainers:
+        if container.find(class_="crayons-story__flare-tag"):
+            continue
+        # Get title link
+        link = str(container.find(
+            class_="crayons-story__title").find('a')['href'])
+        #print("Our link is ")
+        # print(link)
+
+        # Get blurb of article
+        blurb = ""
+
+        # Find the name of the Author
+        author = container.find(
+            class_="crayons-story__secondary fw-medium").string
+
+        # Get date of publishing
+        date = container.find(
+            class_="crayons-story__tertiary fs-xs").find('time').string
+
+        # Get title of article
+        title = str(container.find(
+            class_="crayons-story__title").a.string)
+
+        articles.append(Article(title, blurb, link, author, date))
+        num = num+1
 
     return articles
 

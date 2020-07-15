@@ -7,13 +7,13 @@ class ContentItem:
         qmark_index = link.find('?')
         self.title = title
         self.blurb = blurb
-        self.link = link
+        self.link = link[:qmark_index]
         self.author = author
         self.datePublished = datePublished
 
     def __str__(self):
         # f-string formatting will only work on Python 3.6+
-        return f'{{Title: {self.title}, Blurb: {self.blurb}, Link: {self.link}, Author: {self.author}}}, Date Published: {self.datePublished}}}'
+        return f'{{Title: {self.title}, Blurb: {self.blurb}, Link: {self.link}, Author: {self.author}, Date Published: {self.datePublished}}}'
 
     def __repr__(self):
         return self.__str__()

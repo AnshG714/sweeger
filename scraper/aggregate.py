@@ -1,6 +1,6 @@
 from common import *
 from dzoneScraper import scrape as dzoneScrape
-from mediumScraper import scrape as mediumScrape
+from webScraper import scrape as mediumScrape
 from youtubeScraper import findVideos
 from multiprocessing import Process, Manager
 
