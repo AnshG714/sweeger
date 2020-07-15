@@ -62,7 +62,6 @@ def scrapeFromSources(keywords: [str]):
             res.append(findVideos(keyword))
 
     runInParallel(medium, dzone, youtube)
-    print(res)
     return [item for items in res for item in items]
 
 
