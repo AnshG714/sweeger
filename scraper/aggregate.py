@@ -2,7 +2,7 @@ from common import *
 from dzoneScraper import scrape as dzoneScrape
 from mediumScraper import scrape as mediumScrape
 from youtubeScraper import findVideos
-from multiprocessing import Process
+from multiprocessing import Process, Manager
 
 # All topics in DZone
 
@@ -26,7 +26,7 @@ DZONE_TOPICS = [
 MEDIUM_TOPICS = [
     "software-engineering",
     "programming",
-    "math",
+    # "math",
     #  "machine-learning",
     "javascript",
     "ios-development",
@@ -40,20 +40,20 @@ MEDIUM_TOPICS = [
 
 
 def scrapeFromSources(keywords: [str]):
-    res = []
+    res = Manager().list()
 
     def medium():
         for category in MEDIUM_TOPICS:
             print(f'---- Scraping {category} from Medium ---- \n')
             m_results = mediumScrape(category, keywords=keywords)
-            print(m_results)
+            # print(m_results)
             res.append(m_results)
 
     def dzone():
         for category in DZONE_TOPICS:
             print(f'---- Scraping {category} from DZone ---- \n')
             d_results = dzoneScrape(category, keywords=keywords)
-            print(d_results)
+            # print(d_results)
             res.append(d_results)
 
     def youtube():
