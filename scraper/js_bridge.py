@@ -4,10 +4,10 @@ import sys
 from aggregate import scrapeFromSources
 
 
-def convertToJSON(obj):
+def convertToDict(obj):
 
-    if not issubclass(type(obj), ContentItem):
-        raise ValueError(ContentItem)
+    # if not issubclass(type(obj), ContentItem):
+    #     raise ValueError(ContentItem)
 
     dic = {
         'title': obj.title,
@@ -20,18 +20,18 @@ def convertToJSON(obj):
     if issubclass(type(obj), Video):
         dic['thumbnailLink'] = obj.thumbnailLink
 
-    return json.dumps(dic)
+    return dic
 
 
 def compose(obj):
     if type(obj) == list:
         res = []
         for item in obj:
-            res.append(convertToJSON(item))
+            res.append(convertToDict(item))
 
-        return res
+        return json.dumps(res)
 
-    return convertToJSON(obj)
+    return json.dumps(obj)
 
 
 if __name__ == "__main__":
