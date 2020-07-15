@@ -39,7 +39,7 @@ if __name__ == "__main__":
     # Get list of arguments from command line
     n = len(sys.argv[1])
     a = sys.argv[1][1:n-1]
-    a = a.split(', ')
+    a = a.split(',')
 
     scraperResults = scrapeFromSources(a)
     composed = compose(scraperResults)

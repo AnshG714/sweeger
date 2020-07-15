@@ -74,6 +74,3 @@ def runInParallel(*fns):
         proc.append(p)
     for p in proc:
         p.join()
-
-
-print(scrapeFromSources(["Angular"]))
