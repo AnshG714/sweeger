@@ -33,7 +33,7 @@ def loadPage(topic, pageNumber):
     return driver.page_source
 
 
-def scrapeSource(page_source):
+def scrapeSource(page_source, keywords):
 
     # Instantiate BS object
     soup = BeautifulSoup(page_source, 'lxml')
@@ -59,21 +59,24 @@ def scrapeSource(page_source):
             class_="author-name ng-binding ng-isolate-scope").string
 
         article = Article(title, blurb, link, author, date)
-        articles.append(article)
+        if keywords:
+            for keyword in keywords:
+                if keyword in blurb or keyword in title:
+                    articles.append(Article(title, blurb, link, author, date))
+                    break
+        else:
+            articles.append(Article(title, blurb, link, author, date))
 
     return articles
 
 
-def scrape(topic, numPages=3):
+def scrape(topic, numPages=2, keywords=None):
 
     res = []
     for i in range(1, numPages+1):
         ps = loadPage(topic, i)
-        res.append(scrapeSource(ps))
+        res.append(scrapeSource(ps, keywords))
         time.sleep(1)
 
     # flatten list
     return [item for items in res for item in items]
-
-
-print(scrape("agile-methodology-training-tools-news"))

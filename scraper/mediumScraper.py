@@ -83,7 +83,7 @@ def findArticles(page_source, keywords):
 def scrape(topic, keywords=None):
     ps = fetchWebPageSourceAfterScroll(getMediumURL(topic))
     articles = findArticles(ps, keywords)
-    print(articles)
+    return articles
 
 
 if __name__ == "__main__":
