@@ -33,6 +33,7 @@ var database = app.database();
 
 function add_new_user(email, prefs=default_prefs) {
 	var hash = email.hashCode();
+	
 	// Add to list of users
 	database.ref('/users/').update({
 		[hash]: email
@@ -40,6 +41,16 @@ function add_new_user(email, prefs=default_prefs) {
 	
 	// Create entry in prefs
 	database.ref('/prefs/' + hash).set(prefs)
+}
+
+function remove_user(email) {
+	var hash = email.hashCode();
+	
+	// Remove from list of users
+	database.ref('/users/' + hash).remove();
+	
+	// Remove from prefs
+	database.ref('/prefs/' + hash).remove();
 }
 
 function update_prefs(email, new_prefs) {
@@ -104,3 +115,4 @@ get_content_prefs("random@random.com").then(function(content) {
 get_notif_prefs("random@random.com").then(function(notifs) {
 	console.log("Notifs: " + notifs);
 });*/
+//remove_user("random@random.com");
