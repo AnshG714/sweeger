@@ -82,7 +82,7 @@ function get_notif_prefs(email) {
 	});
 }
 
-
+/*
 new_prefs = {
 	"content": "C++;Java;React JS",
 	"notifs": "monthly"
@@ -103,4 +103,4 @@ get_content_prefs("random@random.com").then(function(content) {
 });
 get_notif_prefs("random@random.com").then(function(notifs) {
 	console.log("Notifs: " + notifs);
-});
+});*/
