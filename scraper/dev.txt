@@ -1,0 +1,159 @@
+{Title: 23 lesser known VS Code Shortcuts as GIF, Blurb: , Link: https://dev.to/devmount/23-lesser-known-vs-code-shortcuts-as-gif-8, Author: Andreas}, Date Published: Jan  7 }
+
+
+{Title: 💻My Web Development VS Code Settings, theme, Extensions, tips and tricks, Blurb: , Link: https://dev.to/lampewebdev/my-web-development-vs-code-settings-theme-extensions-tips-and-tricks-132, Author: Michael "lampe" Lazarski}, Date Published: Jul 21 '19 }
+
+
+{Title: 26 Miraculous VS Code Tools for JavaScript Developers in 2019, Blurb: , Link: https://dev.to/jsmanifest/26-miraculous-vs-code-tools-for-javascript-developers-in-2019-50g, Author: jsmanifest}, Date Published: Jul  7 '19 }
+
+
+{Title: 24 modern ES6 code snippets to solve practical JS problems, Blurb: , Link: https://dev.to/madza/20-modern-es6-snippets-to-solve-practical-js-problems-3n8, Author: Madza}, Date Published: Jan 30 }
+
+
+{Title: 💡 10 VS Code extensions I can't code without, Blurb: , Link: https://dev.to/godcrampy/10-vs-code-extensions-i-can-t-code-without-3an, Author: Sahil Bondre}, Date Published: Apr 30 }
+
+
+{Title: Mindful Code Exercises, Blurb: , Link: https://dev.to/kev_mcg/mindful-code-exercise, Author: Kevin McGillivray}, Date Published: Sep  5 '17 }
+
+
+{Title: My VS Code Setup, Blurb: , Link: https://dev.to/iamismile/my-vs-code-setup-4fc, Author: Ismile Hossain}, Date Published: Feb 20 }
+
+
+{Title: My Visual Studio Code Setup, Blurb: , Link: https://dev.to/aspittel/my-visual-studio-code-setup-1em, Author: Ali Spittel}, Date Published: Jul 17 '18 }
+
+
+{Title: 10 practices for writing readable code, Blurb: , Link: https://dev.to/gonedark/10-practices-for-readable-code-143, Author: Jason McCreary}, Date Published: Sep 18 '18 }
+
+
+{Title: VS Code settings you should customize, Blurb: , Link: https://dev.to/thegeoffstevens/vs-code-settings-you-should-customize-5e7, Author: Geoff Stevens}, Date Published: Feb  6 '19 }
+
+
+{Title: 50 VS Code themes for 2020, Blurb: , Link: https://dev.to/thegeoffstevens/50-vs-code-themes-for-2020-45c, Author: Geoff Stevens}, Date Published: Jan  6 }
+
+
+{Title: Code for Humans, Blurb: , Link: https://dev.to/spidergears/code-forhumans-2c4, Author: Deepak Singh}, Date Published: Jun 22 '18 }
+
+
+{Title: Better Code Review Practices, Blurb: , Link: https://dev.to/leading-edje/better-code-review-practices-15n, Author: bob.js}, Date Published: Jun 22 '19 }
+
+
+{Title: Awesome Visual Studio Code Extensions , Blurb: , Link: https://dev.to/bjhaid_93/awesome-visual-studio-code-extensions--40e, Author: /[Abejide Femi Jr]\s/}, Date Published: May 11 '18 }
+
+
+{Title: Critiques and Code Reviews, Blurb: , Link: https://dev.to/designfrontier/critiques-and-code-reviews-oh, Author: Daniel Sellers}, Date Published: Sep 18 '18 }
+
+
+{Title: How to Write a Good Piece of Code, Blurb: , Link: https://dev.to/taillogs/how-to-write-a-good-piece-of-code-2gm, Author: Ryland G}, Date Published: Jun 25 '19 }
+
+
+{Title: How I Evaluate You in a Code Interview, Blurb: , Link: https://dev.to/mortoray/how-i-evaluate-you-in-a-code-interview-42h, Author: edA‑qa mort‑ora‑y}, Date Published: Oct 30 '19 }
+
+
+{Title: Code Documentation – before, after, and during coding, Blurb: , Link: https://dev.to/cseeman/code-documentation--before-after-and-during-coding-2dj, Author: christine}, Date Published: Nov  1 '18 }
+
+
+{Title: 16 Best Source Code Gems [Collection], Blurb: , Link: https://dev.to/lpasqualis/16-best-source-code-gems-collectio, Author: Lorenzo Pasqualis}, Date Published: Sep 15 '17 }
+
+
+{Title: 6 ways minimalism can help you write clean code, Blurb: , Link: https://dev.to/paulasantamaria/6-ways-minimalism-can-help-you-write-clean-code-45k, Author: Paula Santamaría}, Date Published: Sep 18 '19 }
+
+
+{Title: Make Your Pseudocode Your Real Code, Blurb: , Link: https://dev.to/cannikin/make-your-pseudocode-your-real-code-96, Author: Rob Cameron}, Date Published: Oct 19 '17 }
+
+
+{Title: How dead code spring up during development, Blurb: , Link: https://dev.to/sadick/how-dead-code-spring-up-during-development-5e4, Author: Sadick}, Date Published: Jun 22 '18 }
+
+
+{Title: Learn To Code By Playing These Games, Blurb: , Link: https://dev.to/selawsky/learn-to-code-by-playing-these-games-461, Author: John Selawsky}, Date Published: Feb 20 }
+
+
+{Title: 5 Visual Studio Code Tricks to Boost Your Productivity, Blurb: , Link: https://dev.to/hexrcs/5-visual-studio-code-tricks-to-boost-your-productivity-27a, Author: Xiaoru Li 🇨🇳🇩🇪}, Date Published: Aug  8 '19 }
+
+
+{Title: MS Visual Studio Code - Guide To Git, Blurb: , Link: https://dev.to/hbibzdeploy/ms-visual-studio-code---guide-to-git-cf, Author: Muhammad Habib Jawady}, Date Published: Nov 30 '17 }
+
+
+{Title: 10 essential extensions for VS Code, Blurb: , Link: https://dev.to/fbnlsr/10-essential-extensions-for-vscode-174, Author: Fabien Lasserre ☕️}, Date Published: Apr 20 '18 }
+
+
+{Title: Why I wear purple lipstick and code skirts, Blurb: , Link: https://dev.to/geekgalgroks/why-i-wear-purple-lipstick-and-code-skirts-519, Author: Jenn}, Date Published: Nov 14 '18 }
+
+
+{Title: Clean Code Applied to JavaScript — Part I. Before your start, Blurb: , Link: https://dev.to/carlillo/clean-code-applied-to-javascript-part-i-before-your-start-16i, Author: Carlos Caballero}, Date Published: Nov 22 '19 }
+
+
+{Title: 71 Python Code Snippets for Everyday Problems, Blurb: , Link: https://dev.to/renegadecoder94/71-python-code-snippets-for-everyday-problems-1me, Author: Jeremy Grifski}, Date Published: Jan 29 }
+
+
+{Title: Top 10 Object-Oriented Design Principles for writing Clean Code, Blurb: , Link: https://dev.to/javinpaul/top-10-object-oriented-design-principles-for-writing-clean-code-4pe, Author: javinpaul}, Date Published: Jul 31 '19 }
+
+
+{Title: Why you should code in vanilla too, Blurb: , Link: https://dev.to/dhruv/why-you-should-code-in-vanilla-too--45k, Author: Dhruv}, Date Published: Mar 16 '18 }
+
+
+{Title: Code Reviews Are Awesome, Here Are 7 Reasons Why, Blurb: , Link: https://dev.to/ice_lenor/code-reviews-are-awesome-here-are-7-reasons-why-54o, Author: Elena}, Date Published: Jun 20 '18 }
+
+
+{Title: 14 Beneficial Tips to Write Cleaner Code in React Apps, Blurb: , Link: https://dev.to/jsmanifest/14-beneficial-tips-to-write-cleaner-code-in-react-apps-1gc, Author: jsmanifest}, Date Published: Aug 18 '19 }
+
+
+{Title: Become a VS Code Ninja with these Extensions and Tools [2020], Blurb: , Link: https://dev.to/vikrantnegi/become-a-vs-code-ninja-with-these-extensions-and-tools-2020-111, Author: Vikrant Negi}, Date Published: Jun 26 }
+
+
+{Title: Speed up your development with this new VS Code extension, Blurb: , Link: https://dev.to/alex_barashkov/speed-up-your-development-with-this-new-vs-code-extension-5b3, Author: Alex Barashkov}, Date Published: Jun 19 }
+
+
+{Title: Keeping your code clean by sweeping out "if" statements, Blurb: , Link: https://dev.to/tomazlemos/keeping-your-code-clean-by-sweeping-out-if-statements-4in, Author: Tomaz Lemos}, Date Published: Dec 27 '19 }
+
+
+{Title: This Picture Will Change the Way You Learn to Code, Blurb: , Link: https://dev.to/nexttech/this-picture-will-change-the-way-you-learn-tocode-4km, Author: Saul Costa}, Date Published: Apr 12 '18 }
+
+
+{Title: Write clean code and avoid the distractions of emerging technology, Blurb: , Link: https://dev.to/ben/write-clean-code-and-avoid-the-distractions-of-emerging-technology-3em, Author: Ben Halpern}, Date Published: Jan 14 '18 }
+
+
+{Title: I made over 1,000 code reviews - this is what I learned, Blurb: , Link: https://dev.to/mjuraj/i-made-over-1-000-code-reviews-this-is-what-i-learned-4e9, Author: Juraj Malenica}, Date Published: Jun  4 }
+
+
+{Title: Lessons learned about Bus Factor (3/5): Write explicit code, Blurb: , Link: https://dev.to/einenlum/lessons-learned-about-bus-factor-35-write-explicit-code-38, Author: Yann Rabiller}, Date Published: Sep 27 '17 }
+
+
+{Title: Introducing Dank Neon, a new open source code theme!, Blurb: , Link: https://dev.to/wuz/introducing-dank-neon-a-new-open-source-code-theme-2m, Author: Conlin Durbin}, Date Published: Jan 19 '19 }
+
+
+{Title: Pro tips for Visual Studio Code to be productive in 2018 👨🏻‍💻, Blurb: , Link: https://dev.to/i_ankurbiswas/pro-tips-for-visual-studio-code-to-be-productive-in-2018--1je, Author: Ankur Biswas}, Date Published: Dec 20 '18 }
+
+
+{Title: The DEV Community Published a Book: Your First Year in Code, Blurb: , Link: https://dev.to/devteam/the-dev-community-published-a-book-your-first-year-in-code-1ej, Author: Ben Halpern}, Date Published: Jul 22 '19 }
+
+
+{Title: Productivity boost with the keyboard in Visual Studio Code, Blurb: , Link: https://dev.to/peacefullatom/productivity-boost-with-the-keyboard-in-visual-studio-code-35o, Author: Yuriy Markov}, Date Published: Dec 16 '19 }
+
+
+{Title: You Can Do it in SQL, Stop Writing Extra Code for it, Blurb: , Link: https://dev.to/geshan/you-can-do-it-in-sql-stop-writing-extra-code-for-it-lo, Author: Geshan Manandhar}, Date Published: Dec 14 '18 }
+
+
+{Title: Jazz is Code: How The Jazz Band Can Make You A Better Developer, Blurb: , Link: https://dev.to/thecodetrane/jazz-is-code-how-the-jazz-band-can-make-you-a-better-developer-2nk, Author: Michael Cain}, Date Published: Jun 14 '18 }
+
+
+{Title: 10 rules to code like NASA (applied to interpreted languages), Blurb: , Link: https://dev.to/xowap/10-rules-to-code-like-nasa-applied-to-interpreted-languages-40d, Author: Rémy 🤖}, Date Published: Jul 20 '19 }
+
+
+{Title: Clean code, dirty code, human code, Blurb: , Link: https://dev.to/d_ir/clean-code-dirty-code-human-code-6n, Author: Daniel Irvine 🏳️‍🌈}, Date Published: Jan 19 }
+
+
+{Title: It's perfectly fine to only code at work, don't let anyone tell you otherwise. , Blurb: , Link: https://dev.to/ben/its-perfectly-fine-to-only-code-at-work-dont-let-anyone-tell-you-otherwise--25i, Author: Ben Halpern}, Date Published: Feb 17 '18 }
+
+
+{Title: Code ??, Blurb: , Link: https://dev.to/abhishekalbert/code--27d, Author: Abhishek}, Date Published: Dec  3 '18 }
+
+
+{Title: Do I need to code in my free time to be a good developer?, Blurb: , Link: https://dev.to/chechenev/do-i-need-to-code-in-my-free-time-to-be-a-good-developer-10h, Author: Maxim Chechenev}, Date Published: Jun 19 }
+
+
+{Title: Add dark mode to your website with just a few lines of code, Blurb: , Link: https://dev.to/albertomontalesi/add-dark-mode-to-your-website-with-just-a-few-lines-of-code-5ba, Author: AlbertoM}, Date Published: Feb 17 }
+
+
+{Title: Organizing Code, Blurb: , Link: https://dev.to/foxolot/organizing-code-2i4, Author: FoXoLoT}, Date Published: Nov  1 '18 }
+
+
