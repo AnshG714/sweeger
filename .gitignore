@@ -7,3 +7,4 @@ scraper/__pycache__
 .vscode/cpx.json
 .vscode/launch.json
 .vscode/settings.json
+node/node_modules/*
