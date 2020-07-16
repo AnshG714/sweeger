@@ -14,7 +14,7 @@ const getScraperResults = (keywords) => {
       // received a message sent from the Python script (a simple "print" statement)
       try {
         // Uncomment the following line to see live output.
-        console.log(message.toString());
+        // console.log(message.toString());
         json = JSON.parse(message.toString());
         console.log("parsing successful!");
         return resolve(json);
