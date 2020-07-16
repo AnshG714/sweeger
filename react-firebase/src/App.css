@@ -6,6 +6,11 @@
   height: 40vmin;
   pointer-events: none;
 }
+.inputBox {
+  margin-bottom: 20px;
+  height: 100px;
+  vertical-align: top;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
