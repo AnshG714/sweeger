@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "./Home";
-import Login from "./Login";
-import SignUp from "./SignUp";
-import { AuthProvider } from "./Auth";
-import PrivateRoute from "./PrivateRoute";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import { AuthProvider } from "./actions/Auth";
+import PrivateRoute from "./actions/PrivateRoute";
+import VerifyEmail from "./pages/VerifyEmail";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <PrivateRoute exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/verify-email" component={VerifyEmail} />
         </div>
       </Router>
     </AuthProvider>
