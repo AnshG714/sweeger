@@ -6,7 +6,6 @@ import { AuthContext } from "../actions/Auth.js";
 
 const Home = () => {
   const [user, setUser] = useState();
-  const [prefs, setPrefs] = useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {
