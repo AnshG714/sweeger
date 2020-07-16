@@ -3,7 +3,7 @@
 /.blackbox/secring.gpg
 /env/.env
 scraper/chromedriver
-scraper/__pycache__
+scraper/__pycache__/*
 .vscode/cpx.json
 .vscode/launch.json
 .vscode/settings.json
