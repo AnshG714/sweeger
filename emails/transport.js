@@ -56,7 +56,7 @@ async function sendEmail(email, keywords) {
   });
 
   let transportOptions = {
-    from: '"MLH Fellowship" <anshgodha714@gmail.com>', // sender address
+    from: '"MLH Fellowship" <sweeger.learn@gmail.com>', // sender address
     to: email, // list of receivers
     subject: "MLH - Your suggestions for skillbuilding!", // Subject line
     text: "Your weekly email.", // plain text body
