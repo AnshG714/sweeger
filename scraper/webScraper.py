@@ -67,6 +67,8 @@ def findArticles(page_source, keywords):
         # print(container)
         # Get title link
         link = str(container.find('a')['href'])
+        if link[0] == '/':
+            link = "https://www.medium.com" + link
 
         # Get blurb of article
         blurb = str(container.find(
