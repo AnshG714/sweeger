@@ -10,3 +10,4 @@ scraper/__pycache__/*
 node/node_modules/*
 env/.env
 emails/node_modules/
+node_modules
