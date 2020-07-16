@@ -34,6 +34,21 @@ const Home = () => {
 
   const { email, uid } = currentUser;
   const [keywords, setKeywords] = useState("");
+
+  const send = () => {
+    const lst = keywords.split(",");
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email, keywords: lst }),
+    };
+
+    fetch("/api/sendKeywords", requestOptions)
+      .then((response) => response.json())
+      .then((json) => console.log(json))
+      .catch((err) => console.log(err));
+  };
+
   // console.log({email, uid});
 
   return (
@@ -53,8 +68,7 @@ const Home = () => {
           onChange={(e) => setKeywords(e.target.value)}
         ></textarea>{" "}
         <br />
-        <Button onClick={() => app.auth().signOut()}>Get articles</Button>{" "}
-        <br />
+        <Button onClick={() => send()}>Get articles</Button> <br />
         <br />
         <Button onClick={() => app.auth().signOut()}>Sign Out</Button>
       </Container>
