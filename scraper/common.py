@@ -7,7 +7,7 @@ class ContentItem:
         qmark_index = link.find('?')
         self.title = title
         self.blurb = blurb
-        self.link = link[:qmark_index]
+        self.link = link#[:qmark_index]
         self.author = author
         self.datePublished = datePublished
 
