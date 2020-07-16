@@ -1,8 +1,12 @@
+/.blackbox/pubring.gpg~
+/.blackbox/pubring.kbx~
+/.blackbox/secring.gpg
+/env/.env
 scraper/chromedriver
-scraper/__pycache__/mediumScraper.cpython-38.pyc
-scraper/__pycache__/mediumScraper1.cpython-38.pyc
-scraper/__pycache__/mediumScraper.cpython-38.pyc
+scraper/__pycache__/*
 .vscode/cpx.json
 .vscode/launch.json
 .vscode/settings.json
+node/node_modules/*
 scraper/__pycache__/mediumScraper.cpython-38.pyc
+emails/node_modules/
