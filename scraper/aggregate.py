@@ -66,9 +66,9 @@ def scrapeFromSources(keywords: [str]):
     # #     except:
     # #         continue
 
-    # medium()
-    # youtube()
-    runInParallel(medium, youtube)
+    medium()
+    youtube()
+    #runInParallel(medium, youtube)
     return [item for items in res for item in items]
 
 
