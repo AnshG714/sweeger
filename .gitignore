@@ -6,3 +6,5 @@ scraper/__pycache__/mediumScraper.cpython-38.pyc
 .vscode/launch.json
 .vscode/settings.json
 scraper/__pycache__/mediumScraper.cpython-38.pyc
+env/.env
+emails/node_modules/
