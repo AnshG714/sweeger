@@ -60,7 +60,7 @@ async function sendEmail(keywords) {
     to: "ag759@cornell.edu", // list of receivers
     subject: "MLH - Your weekly suggestions for skillbuilding!", // Subject line
     text: "Your weekly email.", // plain text body
-    html: temp, //await generateHTML(keywords),
+    html: await generateHTML(keywords),
     //
   };
 
