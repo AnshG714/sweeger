@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import app from "../config/Firebase";
-import { Button, Container, Form } from "react-bootstrap";
+import { Button, Container, InputGroup } from "react-bootstrap";
 import NavigationBar from "../components/NavigationBar";
 import { AuthContext } from "../actions/Auth.js";
 
@@ -68,6 +68,12 @@ const Home = () => {
             Get articles
           </Button>
         </Form> */}
+        {/* <InputGroup>
+        <InputGroup.Text className="inputBox"
+          rows={5}
+          value={keywords}
+          onchange=
+        </InputGroup> */}
         <textarea
           className="inputBox"
           rows={5}
