@@ -16,7 +16,7 @@ When you click "Sign Up," you will be informed that your email has not been veri
 
 ![Verify Email](https://github.com/AnshG714/sweeger/blob/master/rsc/verify_email.PNG?raw=true)
 
-Now, navigate back to Sweeger (most likely at [http://localhost:3001], but Sweeger might be at a different port), where you should see the home screen:
+Now, *refresh* the page, where you should see the home screen:
 
 ![Home](https://github.com/AnshG714/sweeger/blob/master/rsc/home.png?raw=true)
 

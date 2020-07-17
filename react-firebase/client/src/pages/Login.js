@@ -25,21 +25,21 @@ const Login = ({ history }) => {
 
     const { currentUser } = useContext(AuthContext);
 
-    const onCreate= () => {
-        const db = app.database();
-        db.ref("users/" + currentUser.uid).set({
-            email: currentUser.email,
-        });
-        db.ref("prefs/" + currentUser.uid).set({
-            frequency: "null",
-            keywords: "null",
-        });
-    }
+    // const onCreate= () => {
+    //     const db = app.database();
+    //     db.ref("users/" + currentUser.uid).set({
+    //         email: currentUser.email,
+    //     });
+    //     db.ref("prefs/" + currentUser.uid).set({
+    //         frequency: "null",
+    //         keywords: "null",
+    //     });
+    // }
 
     if (currentUser && !currentUser.emailVerified) {
         return <Redirect to="/verify-email" />;
     } else if (currentUser && currentUser.emailVerified) {
-        onCreate();
+        // onCreate();
         return <Redirect to="/" />;
     }
 
