@@ -4,6 +4,8 @@ Sweeger is an open-sourced solution that allows you to become a better software 
 
 # Setup
 
+(NOTE: We are having issues running Sweeger on Linux, we are looking into this. Sweeger currently works on Windows and Mac OS)
+
 To get started with Sweeger, navigate to the `/run` directory of the project. Depending on if you are using a Windows- or Unix-based machine, run either `windows.bat` or `unix.sh`. If asked to open a port other than port 3000, enter 'y'. This should start Sweeger in your browser:
 
 ![Login](https://github.com/AnshG714/sweeger/blob/master/rsc/login.png?raw=true)
