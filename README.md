@@ -4,23 +4,25 @@ Sweeger is an open-sourced solution that allows you to become a better software 
 
 # Setup
 
-(a full video demonstration of Sweeger is available at: [https://www.youtube.com/watch?v=026iMqe9JYU])
+To get started with Sweeger, navigate to the `/run` directory of the project. Depending on if you are using a Windows- or Unix-based machine, run either `windows.bat` or `unix.sh`. If asked to open a port other than port 3000, enter 'y'. This should start Sweeger in your browser:
 
-To run Sweeger, navigate to the `run` directory. Depending on if you are using a Windows- or Unix-based system, run either `windows.bat` or `unix.sh`. If asked to open another port, input _yes_. Sweeger should then open in your broswer:
+![Login](https://github.com/AnshG714/sweeger/blob/master/rsc/login.png?raw=true)
 
-[PICTURE]
+To create an account, click "Sign Up" in the top right corner of the screen. This will take you to the "Sign Up" page (see below), where you can enter an email and password for your account. Secure email authentication is achieved using Firebase.
 
-To create an account, select "Sign Up" in the top right corner. You will now be on the "Sign Up" page (see below), where you can then enter your email and desired password. Secure authentication is achieved using Firebase.
+![Sign Up](https://github.com/AnshG714/sweeger/blob/master/rsc/signup.png?raw=true)
 
-[PICTURE]
+When you click "Sign Up," you will be informed that your email has not been verified yet. Open the inbox of the email you used to register. You should have received an email from Sweeger. Follow the link in that email to register.)
 
-After creating your account, you will have to verify your email address. Open the inbox for the email you used to register, and follow the link to verify your email. Then, return to Sweeger at (most likely at https://localhost:3001, but the port may be different) and you should be on the home page (see below).
+![Verify Email](https://github.com/AnshG714/sweeger/blob/master/rsc/verify_email.PNG?raw=true)
 
-[PICTURE]
+Now, navigate back to Sweeger (most likely at [http://localhost:3001], but Sweeger might be at a different port), where you should see the home screen:
 
-Here, you can enter in the topics you would like to receive content for. The desired list of content should be in a comma-separated format, e.g. "C++,Java,Python". When you are ready, select "Get articles." This will invoke a web scraper, which will search for new content related to your interests. The scraper may take a few minutes to run, but within about 3-5 minutes, you should receive an email containing a variety of resources:
+![Home](https://github.com/AnshG714/sweeger/blob/master/rsc/home.png?raw=true)
 
-[PICTURE]
+Here, you can enter a list of topics you would like to receive content for. Enter your desired content in a comma-separated list (e.g. "C++,Java,Python"). Finally, click "Find articles." This will trigger a web scraper which will search various websites for content related to your desired topics. It will take a few minutes for the scraper to finish, but within 3-5 minutes, you should receive an email containing a list of useful resources!:
+
+![Emailed Content](https://github.com/AnshG714/sweeger/blob/master/rsc/email.png?raw=true)
 
 # Flowchart
 
