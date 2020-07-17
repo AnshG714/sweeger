@@ -59,7 +59,7 @@ const Home = () => {
           want to receive emails about.
         </h4>
         <ul>{email}</ul>
-        <Form onSubmit={send}>
+        {/* <Form onSubmit={send}>
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label>Topics you subscribed to</Form.Label>
             <Form.Control as="textarea" rows="3" />
@@ -67,7 +67,7 @@ const Home = () => {
           <Button variant="primary" type="submit">
             Get articles
           </Button>
-        </Form>
+        </Form> */}
         <textarea
           className="inputBox"
           rows={5}
