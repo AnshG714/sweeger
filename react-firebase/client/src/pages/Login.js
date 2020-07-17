@@ -10,6 +10,7 @@ const Login = ({ history }) => {
         async event => {
             event.preventDefault();
             const { email, password } = event.target.elements;
+            const db = app.database();
             try {
                 await app
                     .auth()
@@ -24,9 +25,21 @@ const Login = ({ history }) => {
 
     const { currentUser } = useContext(AuthContext);
 
+    const onCreate= () => {
+        const db = app.database();
+        db.ref("users/" + currentUser.uid).set({
+            email: currentUser.email,
+        });
+        db.ref("prefs/" + currentUser.uid).set({
+            frequency: "null",
+            keywords: "null",
+        });
+    }
+
     if (currentUser && !currentUser.emailVerified) {
         return <Redirect to="/verify-email" />;
     } else if (currentUser && currentUser.emailVerified) {
+        onCreate();
         return <Redirect to="/" />;
     }
 

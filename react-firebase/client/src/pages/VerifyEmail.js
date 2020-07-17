@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { withRouter, Redirect } from "react-router";
 import { Alert, Button } from 'react-bootstrap';
+import { AuthContext } from "../actions/Auth.js";
 
 export default function VerifyEmail() {
     const [show, setShow] = useState(true);
+
+    const { currentUser } = useContext(AuthContext);
+
+    if (currentUser && currentUser.emailVerified) {
+        return <Redirect to="/" />;
+    }
+
 
     if (show) {
         return (
@@ -14,6 +23,7 @@ export default function VerifyEmail() {
                 <Alert.Heading>Your email is not verified!</Alert.Heading>
                 <p>
                     Please check your mail box to verify your email.
+                    Refresh page after email is verified.
         </p>
             </Alert>
         );

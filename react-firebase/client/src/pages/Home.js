@@ -1,39 +1,37 @@
 import React, { useEffect, useContext, useState } from "react";
 import app from "../config/Firebase";
-import { Button, Container } from "react-bootstrap";
+import { Button, Container, Form } from "react-bootstrap";
 import NavigationBar from "../components/NavigationBar";
 import { AuthContext } from "../actions/Auth.js";
 
 const Home = () => {
-  const [user, setUser] = useState();
+
+  const { currentUser } = useContext(AuthContext);
+
+  const { uid } = currentUser;
+  const [email, setEmail] = useState();
+  const [frequency, setFrequency] = useState("null");
+  const [keywords, setKeywords] = useState("");
 
   React.useEffect(() => {
     const fetchData = async () => {
       const db = app.database();
-      const data = await db.ref("users/742881651").once("value");
-      console.log(data);
-      setUser(data.val());
+      const user = await db.ref("users/" + uid).once("value");
+      setEmail(user.val().email);
+      const pref = await db.ref("prefs/" + uid).once("value");
+      setKeywords(pref.val().keywords);
+      setFrequency(pref.val().frequency);
     };
     fetchData();
   }, []);
 
-  // const onCreate = () => {
-  //   const db = firebase.firestore();
-  //   db.collection("spells").add({ name: newSpellName });
-  // };
-
-  // const writeUserData = useCallback(
-  //   async event => {
-  //     event.preventDefault();
-  //     callback
-  //   },
-  //   [input],
-  // )
-
-  const { currentUser } = useContext(AuthContext);
-
-  const { email, uid } = currentUser;
-  const [keywords, setKeywords] = useState("");
+  const onUpdate = () => {
+    const db = app.database();
+    db.ref('prefs/' + uid).set({
+      frequency: frequency,
+      keywords: keywords,
+    });
+  }
 
   const send = () => {
     const lst = keywords.split(",");
@@ -47,9 +45,9 @@ const Home = () => {
       .then((response) => response.json())
       .then((json) => console.log(json))
       .catch((err) => console.log(err));
-  };
 
-  // console.log({email, uid});
+    onUpdate();
+  };
 
   return (
     <div>
@@ -61,6 +59,15 @@ const Home = () => {
           want to receive emails about.
         </h4>
         <ul>{email}</ul>
+        <Form onSubmit={send}>
+          <Form.Group controlId="exampleForm.ControlTextarea1">
+            <Form.Label>Topics you subscribed to</Form.Label>
+            <Form.Control as="textarea" rows="3" />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Get articles
+          </Button>
+        </Form>
         <textarea
           className="inputBox"
           rows={5}
